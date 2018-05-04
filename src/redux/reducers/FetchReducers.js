@@ -5,6 +5,9 @@ import * as Types from '../constants/FetchTypes'
 const initialState = {
     user: '',
     age: '18'
+
+
+    
 }
 
 export default function fetchReducers(state = initialState, action = {}) {
