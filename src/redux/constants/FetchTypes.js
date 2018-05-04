@@ -1,0 +1,9 @@
+/**
+ * 
+ * 
+ * ActionTypes
+ */
+
+ export const ACTION_FETCH_SUCCESS = 'ACTION_FETCH_SUCCESS'
+ export const ACTION_FETCH_LOADING = 'ACTION_FETCH_LOADING'
+ export const ACTION_FETCH_ERROR = 'ACTION_FETCH_ERROR'
