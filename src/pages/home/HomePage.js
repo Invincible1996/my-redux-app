@@ -9,6 +9,9 @@ import { connect } from 'react-redux'
 import ContainerDecorators from '../../core/decorator/ContainerDecorator'
 import BaseContainer from '../../core/container/BaseContainer'
 import * as FetchActions from '../../redux/actions/FetchActions'
+import Loading from '../../core/components/Loading'
+
+
 const mapStateToProps = (state) => {
     console.log('state', state)
     return {
@@ -47,11 +50,12 @@ export default class HomePage extends Component {
 
     render() {
 
-        
+
 
         console.log('this.props～～～～～～～～～～～', this.props)
         return (<View style={styles.container}>
             <Text>{this.props.user}</Text>
+            {this.props.user === "Loading" && < Loading />}
         </View>)
     }
 }
