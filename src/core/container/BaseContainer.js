@@ -6,8 +6,12 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { NavigationActions } from 'react-native'
 import { connect } from 'react-redux'
+import Loading from '../components/Loading'
+
 function mapStateToProps(store, props) {
+    console.log('store', store)
     return {
+        isLoading: store.fetchReducers.isLoading
     }
 }
 @connect(mapStateToProps)
@@ -22,7 +26,7 @@ function mapStateToProps(store, props) {
         }
 
         componentDidMount() {
-            console.log('======', this.props)
+            console.log('===2222===', this.props)
         }
 
         push() {
@@ -33,6 +37,7 @@ function mapStateToProps(store, props) {
         render() {
             return (<View style={styles.container}>
                 <Comp push={this.push} {...this.props} />
+                {this.props.isLoading && <Loading />}
             </View>)
         }
     }
