@@ -8,7 +8,7 @@ import { NavigationActions } from 'react-navigation'
 import { connect } from 'react-redux'
 import ContainerDecorators from '../../core/decorator/ContainerDecorator'
 import BaseContainer from '../../core/container/BaseContainer'
-import * as FetchActions from '../../redux/actions/FetchActions'
+
 
 
 const mapStateToProps = (state) => {
@@ -18,13 +18,7 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchData: (url, onSuccess, onError) => dispatch(FetchActions.fetchData(url, onSuccess, onError))
-    }
-}
-
-@ContainerDecorators(mapStateToProps, mapDispatchToProps)
+@ContainerDecorators(mapStateToProps)
 export default class HomePage extends Component {
 
     static navigationOptions = ({ navigation }) => {
@@ -49,9 +43,6 @@ export default class HomePage extends Component {
 
     render() {
 
-
-
-        console.log('this.props～～～～～～～～～～～', this.props)
         return (<View style={styles.container}>
             <Text>{this.props.user}</Text>
         </View>)
